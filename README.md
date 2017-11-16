@@ -64,3 +64,5 @@ is configured with `workOffline=true` parameter. This forces stub runner to the
 local Maven repoistory to look for the stubs. This is only for this demo. In a 
 real application of Spring Cloud Contract the parameter would need to be set
 to `workOffline=false` to pull the latest stub artifact from Nexus. 
+
+You need to build the `api` first, to generate the stub artifact for the other apps.
