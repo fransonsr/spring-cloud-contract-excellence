@@ -17,8 +17,8 @@ its data from the API. The domain is a catalog of videos, VideoCat.
 
 ### REST API
 
-**Directory:** api
-**URL:** http://localhost:8080/videos
+**Directory:** api  
+**URL:** http://localhost:8080/videos  
 **Execution:** `java -jar target/api-0.0.1-SNAPSHOT.jar`
 
 The above URL returns a JSON representation of a list of videos. Currently, 
@@ -32,8 +32,8 @@ such contracts.
 
 ### Web Client
 
-**Directory:** web
-**URL:** http://localhost:8081/
+**Directory:** web  
+**URL:** http://localhost:8081/  
 **Execution:** `java -jar target/web-0.0.1-SNAPSHOT.jar`
 
 The above URL is a web page listing the videos obtained from the API. 
@@ -44,7 +44,7 @@ cannot be running during the build, as there would be a port conflict.
 
 ### CLI
 
-**Directory:** cli
+**Directory:** cli  
 **Execution:** `java -jar cli/target/cli-0.0.1-SNAPSHOT.jar`
 
 Once in the shell, execute `help` to display the help screen. Note the `list` 
