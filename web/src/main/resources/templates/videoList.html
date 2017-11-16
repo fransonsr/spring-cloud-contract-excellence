@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Video Catalog: Title Listing</title>
+</head>
+<body>
+	<h2>Video Catalog: Title Listing</h2>
+
+	<div>
+		<ol>
+			<li th:each="video : ${videos}">
+				<span th:text="${video.title}">Title</span> (<span th:text="${video.rating}">Rating</span>)
+			</li>
+		</ol>
+	</div>
+
+</body>
+</html>

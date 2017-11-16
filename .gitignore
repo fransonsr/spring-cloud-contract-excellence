@@ -1,0 +1,20 @@
+# Maven
+target/
+overlays/
+
+# Eclipse
+.settings/
+.project
+.classpath
+.springBeans
+.metadata/
+Servers/
+.workspaces/
+.gradle/
+
+# IntelliJ
+*.iml
+.idea/
+
+# This demo
+spring-shell.log
