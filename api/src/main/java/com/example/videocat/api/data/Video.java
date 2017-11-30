@@ -18,7 +18,8 @@ public class Video {
 	private Integer year;
 	private String imbdURL;
 
-	public Video() {}
+	public Video() {
+	}
 
 	public Video(Long id, String title, String rating, Integer year, String imbdURL) {
 		this.id = id;

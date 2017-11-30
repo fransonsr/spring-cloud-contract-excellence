@@ -8,7 +8,8 @@ public class Video {
 	private String title;
 	private String rating;
 
-	public Video() {}
+	public Video() {
+	}
 
 	public Video(String title, String rating) {
 		super();

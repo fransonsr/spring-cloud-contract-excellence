@@ -42,10 +42,7 @@ public class VideoCatAPIGatewayRetryTest {
 
 	@Test
 	public void list_noRetry() throws Exception {
-		stubFor(get(urlEqualTo("/videos"))
-				.willReturn(aResponse()
-						.withStatus(200)
-						.withBodyFile("api-videos.json")));
+		stubFor(get(urlEqualTo("/videos")).willReturn(aResponse().withStatus(200).withBodyFile("api-videos.json")));
 
 		List<Video> videos = gateway.list();
 
@@ -56,9 +53,7 @@ public class VideoCatAPIGatewayRetryTest {
 
 	@Test
 	public void list_404_noRetry() throws Exception {
-		stubFor(get(urlEqualTo("/videos"))
-				.willReturn(aResponse()
-						.withStatus(404)));
+		stubFor(get(urlEqualTo("/videos")).willReturn(aResponse().withStatus(404)));
 
 		thrown.expect(NotFoundException.class);
 		thrown.expect(new VerificationMethod() {
@@ -73,17 +68,11 @@ public class VideoCatAPIGatewayRetryTest {
 
 	@Test
 	public void list_retry_503_success() throws Exception {
-		stubFor(get(urlEqualTo("/videos")).inScenario("Service Unavailable")
-				.whenScenarioStateIs(Scenario.STARTED)
-				.willReturn(aResponse()
-						.withStatus(503))
-				.willSetStateTo("503"));
+		stubFor(get(urlEqualTo("/videos")).inScenario("Service Unavailable").whenScenarioStateIs(Scenario.STARTED)
+				.willReturn(aResponse().withStatus(503)).willSetStateTo("503"));
 
-		stubFor(get(urlEqualTo("/videos")).inScenario("Service Unavailable")
-				.whenScenarioStateIs("503")
-				.willReturn(aResponse()
-						.withStatus(200)
-						.withBodyFile("api-videos.json")));
+		stubFor(get(urlEqualTo("/videos")).inScenario("Service Unavailable").whenScenarioStateIs("503")
+				.willReturn(aResponse().withStatus(200).withBodyFile("api-videos.json")));
 
 		List<Video> videos = gateway.list();
 
@@ -94,9 +83,7 @@ public class VideoCatAPIGatewayRetryTest {
 
 	@Test
 	public void list_retry_503_exausted() throws Exception {
-		stubFor(get(urlEqualTo("/videos"))
-				.willReturn(aResponse()
-						.withStatus(503)));
+		stubFor(get(urlEqualTo("/videos")).willReturn(aResponse().withStatus(503)));
 
 		thrown.expect(ServiceUnavailableException.class);
 		thrown.expect(new VerificationMethod() {

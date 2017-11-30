@@ -5,16 +5,20 @@ package com.example.videocat.api.rest;
  */
 public class VideoRepresentation {
 
-	// TODO: remove the 'id' from the representation (and clients) because we should not
-	// expose the database synthetic identifier to the public. This will create a case
-	// where we can demonstrate how the Spring Cloud Contract verifier and generated
+	// TODO: remove the 'id' from the representation (and clients) because we
+	// should not
+	// expose the database synthetic identifier to the public. This will create
+	// a case
+	// where we can demonstrate how the Spring Cloud Contract verifier and
+	// generated
 	// stub will help identify breaking changes with clients.
 
 	private Long id;
 	private String title;
 	private String rating;
 
-	public VideoRepresentation() {}
+	public VideoRepresentation() {
+	}
 
 	public VideoRepresentation(Long id, String title, String rating) {
 		this.id = id;

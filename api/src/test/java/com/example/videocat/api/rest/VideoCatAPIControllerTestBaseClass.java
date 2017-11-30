@@ -10,8 +10,7 @@ import com.example.videocat.api.VideoCatAPIApplication;
 import com.example.videocat.api.rest.VideoCatAPIController;
 import com.jayway.restassured.module.mockmvc.RestAssuredMockMvc;
 
-
-@SpringBootTest(classes = {VideoCatAPIApplication.class})
+@SpringBootTest(classes = { VideoCatAPIApplication.class })
 @RunWith(SpringRunner.class)
 public class VideoCatAPIControllerTestBaseClass {
 

@@ -25,7 +25,8 @@ public class VideoCatAPIGateway {
 
 		LOG.error("Requesting videos");
 
-		ResponseEntity<List<Video>> response = restTemplate.exchange("http://localhost:8080/videos", HttpMethod.GET, null, ptr);
+		ResponseEntity<List<Video>> response = restTemplate.exchange("http://localhost:8080/videos", HttpMethod.GET,
+				null, ptr);
 		return response.getBody();
 	}
 

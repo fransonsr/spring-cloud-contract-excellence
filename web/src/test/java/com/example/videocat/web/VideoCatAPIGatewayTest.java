@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = VideoCatWebApplication.class)
-@AutoConfigureStubRunner(workOffline = true, ids = {"com.example.videocat:api:+:8080"})
+@AutoConfigureStubRunner(workOffline = true, ids = { "com.example.videocat:api:+:8080" })
 public class VideoCatAPIGatewayTest {
 
 	@Autowired

@@ -22,12 +22,9 @@ public class VideoCatAPIController {
 		this.videoRepository = videoRepository;
 	}
 
-
 	@GetMapping("/videos")
 	public List<VideoRepresentation> list() {
 		List<Video> list = videoRepository.findAll();
-		return list.stream()
-				.map(v -> dozerBeanMapper.map(v, VideoRepresentation.class))
-				.collect(toList());
+		return list.stream().map(v -> dozerBeanMapper.map(v, VideoRepresentation.class)).collect(toList());
 	}
 }

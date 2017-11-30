@@ -18,9 +18,10 @@ public class VideoCatCommands {
 	public void list() {
 		List<Video> list = gateway.list();
 
-		for (int i = 0; i < list.size(); i++ ) {
+		for (int i = 0; i < list.size(); i++) {
 			Video video = list.get(i);
-			System.out.println(" " + video.getId() + " - Title: " + video.getTitle() + "; rating: " + video.getRating());
+			System.out
+					.println(" " + video.getId() + " - Title: " + video.getTitle() + "; rating: " + video.getRating());
 		}
 	}
 

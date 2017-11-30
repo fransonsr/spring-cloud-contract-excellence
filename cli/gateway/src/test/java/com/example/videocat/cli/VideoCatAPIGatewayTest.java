@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = VideoCatAPIGatewayTestApplication.class)
-@AutoConfigureStubRunner(workOffline = true, ids = {"com.example.videocat:api:+:8080"})
+@AutoConfigureStubRunner(workOffline = true, ids = { "com.example.videocat:api:+:8080" })
 public class VideoCatAPIGatewayTest {
 
 	@Autowired
@@ -23,7 +23,8 @@ public class VideoCatAPIGatewayTest {
 
 	@Test
 	public void list() throws Exception {
-		// TODO: when the API removes the 'id' from the representation, it is this test case
+		// TODO: when the API removes the 'id' from the representation, it is
+		// this test case
 		// that should fail.
 
 		List<Video> actual = gateway.list();

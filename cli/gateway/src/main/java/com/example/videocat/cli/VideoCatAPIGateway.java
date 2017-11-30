@@ -24,11 +24,10 @@ public class VideoCatAPIGateway {
 		this.restTemplate = restTemplate;
 	}
 
-	@Retryable(
-			include = { ServiceUnavailableException.class }
-	)
+	@Retryable(include = { ServiceUnavailableException.class })
 	public List<Video> list() {
-		ResponseEntity<String> response = execute(() ->  restTemplate.exchange("http://localhost:8080/videos", HttpMethod.GET, null, String.class));
+		ResponseEntity<String> response = execute(
+				() -> restTemplate.exchange("http://localhost:8080/videos", HttpMethod.GET, null, String.class));
 
 		List<Video> list = new ArrayList<>();
 
@@ -37,7 +36,7 @@ public class VideoCatAPIGateway {
 
 		int length = context.read("$.length()");
 		for (int i = 0; i < length; i++) {
-			Long id = Long.valueOf((Integer)context.read("$.[" + i + "].id"));
+			Long id = Long.valueOf((Integer) context.read("$.[" + i + "].id"));
 			String title = context.read("$.[" + i + "].title");
 			String rating = context.read("$.[" + i + "].rating");
 			list.add(new Video(id, title, rating));
@@ -50,12 +49,10 @@ public class VideoCatAPIGateway {
 	private <T> T execute(Supplier<T> supplier) {
 		try {
 			return supplier.get();
-		}
-		catch (HttpServerErrorException | HttpClientErrorException e) {
+		} catch (HttpServerErrorException | HttpClientErrorException e) {
 			if (503 == e.getRawStatusCode()) {
 				throw new ServiceUnavailableException(e);
-			}
-			else if (404 == e.getRawStatusCode()) {
+			} else if (404 == e.getRawStatusCode()) {
 				throw new NotFoundException(e);
 			}
 

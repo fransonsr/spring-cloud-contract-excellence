@@ -9,7 +9,8 @@ public class Video {
 	private String title;
 	private String rating;
 
-	public Video() {}
+	public Video() {
+	}
 
 	public Video(Long id, String title, String rating) {
 		super();
