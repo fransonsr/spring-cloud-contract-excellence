@@ -1,0 +1,13 @@
+[ {
+  "id" : 1,
+  "title" : "Dumbo",
+  "rating" : "G"
+}, {
+  "id" : 2,
+  "title" : "Star Wars",
+  "rating" : "PG"
+}, {
+  "id" : 3,
+  "title" : "Dune",
+  "rating" : "PG-13"
+} ]
